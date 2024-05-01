@@ -1,52 +1,44 @@
 const url_pokemons = 'https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20' ;
 
-//console.log(url_pokemons);
-
-//https://pokeapi.co/api/v2/ability
 
 
-/* const tarjetita = (ubicacion) =>{
-    const container = document.getElementById("container")
-    const li = document.createElement ('li');
-    const titulo = document.createElement ('h3');
-    titulo.innerText = 'hola'
-    li.appendChild(titulo);
-    container.appendChild(li)
-} */
-
-const mostrarTarjeta = (ubicacion, img) => {
-    const container = document.getElementById("container");
-    const titulo = document.createElement ('h3');
+const mostrarTarjeta = (nombre, img) => {
+    const contenedorPokemons = document.getElementById("contenedor-pokemons");
+    const tarjeta = document.createElement('div');
+    const titulo = document.createElement('h3');
     const imagen = document.createElement('img');
-
-    container.appendChild(titulo);
-    container.appendChild(imagen);
-
-    titulo.innerText = ubicacion
-    imagen.src = img;
-    //container.innerText = 'hola'
     
+    tarjeta.classList.add('tarjeta'); // Agregamos una clase a la tarjeta para el estilo CSS
+    contenedorPokemons.appendChild(tarjeta);
+    tarjeta.appendChild(titulo);
+    tarjeta.appendChild(imagen);
+    
+    titulo.innerText = nombre;
+    imagen.src = img; 
 }
 
-const url_pokemons2 = 'https://pokeapi.co/api/v2/pokemon/1'
+
+
+const url_base = 'https://pokeapi.co/api/v2/pokemon/'
+const cantidad_pokemons = 100; 
 
 
 
-fetch(url_pokemons2).then(lista => lista.json())
-.then(resultado => {
-    console.log("result", resultado)
 
-    const nombre = resultado["name"]
-    // console.log(nombre)
-    const img = resultado.sprites.front_default
-    //console.log(img)
+for (let i = 1; i <= cantidad_pokemons; i++) {
+    const url_pokemon = `${url_base}${i}`;
     
-   mostrarTarjeta(nombre, img)
-    
-})
+    fetch(url_pokemon)
+        .then(response => response.json())
+        .then(resultado => {
+            console.log("result", resultado);
 
-
-
+            const nombre = resultado.name;
+            const img = resultado.sprites.front_default;
+            
+            mostrarTarjeta(nombre, img); 
+        });
+}
 
 
 
