@@ -4,6 +4,10 @@ const mostrarTarjeta = (nombre, img,) => {
     const tarjeta = document.createElement('div');
     const titulo = document.createElement('h3');
     const imagen = document.createElement('img');
+    tarjeta.addEventListener('click', () => { 
+        detalleOn(nombre,img)
+
+    })
 
     
     tarjeta.classList.add('tarjeta');
@@ -15,6 +19,15 @@ const mostrarTarjeta = (nombre, img,) => {
     imagen.src = img; 
 }
 
+
+const detalleOn = (nombre, img) => {
+    // Construye la URL de destino con los parámetros necesarios
+    
+    const destino = 'detalle.html'
+    
+    // Redirige a la página de detalle.html
+    window.location.href = destino;
+}
 
 
 const url_base = 'https://pokeapi.co/api/v2/pokemon/'
