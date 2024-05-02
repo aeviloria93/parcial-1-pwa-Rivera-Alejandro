@@ -1,11 +1,11 @@
 
-const mostrarTarjeta = (nombre, img,) => {
+const mostrarTarjeta = (nombre, img, pokeId) => {
     const contenedorPokemons = document.getElementById("contenedor-pokemons");
     const tarjeta = document.createElement('div');
     const titulo = document.createElement('h3');
     const imagen = document.createElement('img');
     tarjeta.addEventListener('click', () => { 
-        detalleOn(nombre,img)
+        detalleOn(pokeId)
 
     })
 
@@ -20,13 +20,10 @@ const mostrarTarjeta = (nombre, img,) => {
 }
 
 
-const detalleOn = (nombre, img) => {
-    // Construye la URL de destino con los parámetros necesarios
+const detalleOn = (pokeId) => {
     
-    const destino = 'detalle.html'
-    
-    // Redirige a la página de detalle.html
-    window.location.href = destino;
+    const destino = 'detalle.html?id='    
+    window.location.href = destino + pokeId;
 }
 
 
@@ -42,14 +39,15 @@ for (let i = 1; i <= cantidad_pokemons; i++) {
     fetch(url_pokemon)
         .then(response => response.json())
         .then(resultado => {
-            //console.log("result", resultado);
+            console.log("result", resultado);
 
             const nombre = resultado.name;
             const img = resultado.sprites.front_default;
+            const pokeId = resultado.id
             
 
             
-            mostrarTarjeta(nombre,img); 
+            mostrarTarjeta(nombre,img,pokeId); 
         });
 }
 
