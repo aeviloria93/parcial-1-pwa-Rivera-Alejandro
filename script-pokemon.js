@@ -41,3 +41,11 @@ fetch(urlFinal)
     mostrarDetalle(nombre,img,pokeId); 
 });
 
+const goBack = () => {
+    
+    const destino = 'index.html'    
+    window.location.href = destino 
+    
+}
+
+HOLA
