@@ -71,30 +71,13 @@ const gohHist = () => {
     
 }
 
-
-/*const guardarInfusion = (infusion) => {
-    const datos = JSON.parse(localStorage.getItem("historial")) || [];
-    datos.push(infusion);
-    localStorage.setItem("historial", JSON.stringify(datos))
-}
-
-
-
-
- const mostrarItem = (item) => {
-    const lista = document.querySelector('.historial');
-    const tarjeta = document.createElement('div');
-    tarjeta.className="item"; 
-    tarjeta.innerText = JSON.stringify(item)
-    lista.appendChild(tarjeta);
-}
-
-const mostrarHistorial = () => {
-    const datos = JSON.parse(localStorage.getItem("historial")) || [];
-    datos.forEach(item => {
-        mostrarItem(item);
-    })
-}
-
-
-mostrarHistorial(); */
+document.getElementById('btnBuscar').addEventListener('click', function() {
+    const id = document.getElementById('inputId').value.trim();
+    if (id !== '') {
+        // Redirigir al usuario a la página de detalles del Pokémon con el ID proporcionado
+        window.location.href = 'detalle.html?id=' + id;
+        guardarPokemonClickeado(id);
+    } else {
+        alert('Por favor, ingrese un ID de Pokémon válido.');
+    }
+});
