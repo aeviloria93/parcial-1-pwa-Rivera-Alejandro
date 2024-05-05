@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+
+main{
+    width: 80%;
+    margin: auto;
+}
+
+header{
+    background-color: yellowgreen;
+    border-radius: 5px;
+}
+
+main > header img:first-child{
+
+    width: 50%;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+
+}
+
+h1{
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+

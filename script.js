@@ -2,8 +2,10 @@
 const mostrarTarjeta = (nombre, img, pokeId) => {
     const contenedorPokemons = document.getElementById("contenedor-pokemons");
     const tarjeta = document.createElement('div');
-    const titulo = document.createElement('h3');
+    tarjeta.classList.add('tarjeta');
     const imagen = document.createElement('img');
+    const titulo = document.createElement('h3');
+    
     tarjeta.addEventListener('click', () => { 
         detalleOn(pokeId);
         guardarPokemonClickeado(pokeId)
@@ -14,8 +16,9 @@ const mostrarTarjeta = (nombre, img, pokeId) => {
     
     tarjeta.classList.add('tarjeta');
     contenedorPokemons.appendChild(tarjeta);
-    tarjeta.appendChild(titulo);
     tarjeta.appendChild(imagen);
+    tarjeta.appendChild(titulo);
+    
     
     titulo.innerText = nombre;
     imagen.src = img; 

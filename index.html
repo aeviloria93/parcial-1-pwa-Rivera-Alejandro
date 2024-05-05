@@ -8,19 +8,23 @@
     <title>PARCIAL PWA</title>
 </head>
 <body>
+    <main>
+        <header>
+                <img src="img/poster.jpg" alt="pokemon wallpaper">
+                <img class= "logo" src="img/h1.png" alt="pokemon logo">
+                <h1>Pokemones</h1> 
+        </header>
+        <div class="boton">
+            <input type="text" id="inputId" placeholder="Ingrese un ID del del 1 al 100">
 
-    <h1>Pokemones</h1>
+            <button id="btnBuscar">Buscar</button>
 
-    <input type="text" id="inputId" placeholder="Ingrese un ID del del 1 al 100">
+            <button onclick="gohHist()">Ver Pokehistorial</button>
+        </div>        
+        <div class="conatiner" id="contenedor-pokemons">
+        </div>
 
-    <button id="btnBuscar">Buscar</button>
-
-    <button onclick="gohHist()">Ver Pokehistorial</button>
-
-    <div class="conatiner" id="contenedor-pokemons">
-    </div>
-
-    
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

@@ -9,8 +9,8 @@ console.log(urlFinal)
 const mostrarDetalle = (nombre, img, pokeId) => {
     const contenedorPokemons = document.getElementById("contenedor-pokemons");
     const tarjeta = document.createElement('div');
-    const titulo = document.createElement('h3');
     const imagen = document.createElement('img');
+    const titulo = document.createElement('h3');
     tarjeta.addEventListener('click', () => { 
         detalleOn(pokeId)
 
@@ -19,9 +19,8 @@ const mostrarDetalle = (nombre, img, pokeId) => {
     
     tarjeta.classList.add('tarjeta');
     contenedorPokemons.appendChild(tarjeta);
-    tarjeta.appendChild(titulo);
     tarjeta.appendChild(imagen);
-    
+    tarjeta.appendChild(titulo);
     titulo.innerText = nombre;
     imagen.src = img; 
 }
