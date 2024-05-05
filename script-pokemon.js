@@ -6,7 +6,7 @@ const urlFinal = urlGeneral + idDetalle ;
 console.log(urlFinal)
 
 
-const mostrarDetalle = (nombre, img, pokeId) => {
+const mostrarDetalle = (nombre, img, pokeId, peso,) => {
     const contenedorPokemons = document.getElementById("contenedor-pokemons");
     //creamos la tarjeta
     const tarjeta = document.createElement('div');
@@ -24,24 +24,48 @@ const mostrarDetalle = (nombre, img, pokeId) => {
 
     //creamos la segunda columna
     const columnaDerecha = document.createElement('div');
-    columnaDerecha.classList.add('col-md-6');
+    columnaDerecha.classList.add('col-md-6', 'colDer');
+
+    const div1 = document.createElement('div');
+    div1.classList.add('fondo');
+
+    columnaDerecha.appendChild(div1)
 
     const imagen = document.createElement('img');
     imagen.classList.add('card-img');
     imagen.src = img;
 
-    const titulo = document.createElement('h3');
-    titulo.classList.add('card-title');
+    /* const imagen2 = document.createElement('img');
+    imagen2.classList.add('card-img')
+    imagen2.src = img2; */
+
+    const nombrePkm = document.createElement('h2');
+    nombrePkm.classList.add('nombre');
+    nombrePkm.innerText = nombre
+
+    const idPkm = document.createElement('h2');
+    idPkm.innerText = "Pokemon Id" + " " + pokeId;
+
+    const pokePeso = document.createElement('p')
+    pokePeso.innerText = "Peso" + " " + peso ;
+
+    //const pokeTipo = document.createElement('p')
+    //pokeTipo.innerText = "Habilidades"
 
 
-    
+        
     tarjeta.addEventListener('click', () => { 
         detalleOn(pokeId)
 
     })
 
     columnaIzquierda.appendChild(imagen);
-    columnaDerecha.appendChild(titulo);
+    //columnaIzquierda.appendChild(imagen2)
+
+
+    div1.appendChild(nombrePkm);
+    div1.appendChild(idPkm);
+    div1.appendChild(pokePeso);
 
     fila.appendChild(columnaIzquierda)
     fila.appendChild(columnaDerecha)
@@ -60,10 +84,14 @@ fetch(urlFinal)
 
     const nombre = resultado.name;
     const img = resultado.sprites.front_default;
-    const pokeId = resultado.id
+    //const img2 = resultado.sprites.back_default;
+    const pokeId = resultado.id;
+    const peso = resultado.weight;
     
     
-    mostrarDetalle(nombre,img,pokeId); 
+    
+    
+    mostrarDetalle(nombre,img,pokeId,peso); 
 });
 
 const goBack = () => {

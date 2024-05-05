@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgba(165, 9, 9, 0.741);
+    background-color: #45C4B0;
 
 }
 
@@ -47,7 +47,7 @@ h3{
     border-radius: 2px;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: rgb(175, 173, 173);
+    background-color:#13678A;
     width: 20%;
     
 
@@ -63,7 +63,7 @@ h3{
 
 .boton{
 
-    background-color: rgba(162, 163, 209, 0.841);
+    background-color: #45C4B0;
     display: block;
     text-align: center;
     border: solid 1px black;
@@ -75,9 +75,12 @@ h3{
     border-radius: 10px;
 }
 
-#btnBuscar {
+button {
 
 padding: 0.5rem;
 border-radius: 10px;
+color: #13678A;
+font-size: 1rem;
+
 }
 

@@ -40,5 +40,38 @@ h1{
     display: block;
     margin: auto;
     text-align: center;
+    color: #012030;
 }
 
+
+
+img.card-img{
+    width: 65%;
+    }
+
+
+.fondo{
+    background-color:#DAFDBA;
+    height: 100%;
+    
+}
+.nombre{
+    font-size: 3rem;
+    padding: 1rem;
+    
+    
+}
+
+.boton{
+
+    padding: 0.5rem;
+    margin: auto;
+    text-align: center;
+    
+}
+
+.boton button{
+    color:  #012030;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
