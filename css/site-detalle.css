@@ -9,15 +9,21 @@ main{
 
 header{
     background-color: yellowgreen;
-    border-radius: 5px;
+    
 }
 
+main{
+
+    background-color: #13678A;
+
+}
 main > header img:first-child{
 
     width: 50%;
     display: block;
     margin: auto;
     border-radius: 5px;
+    outline: whitesmoke solid;
 
 }
 
@@ -26,5 +32,13 @@ h1{
     padding: 1rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
+}
+
+.tarjeta{
+
+    background-color: whitesmoke;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 

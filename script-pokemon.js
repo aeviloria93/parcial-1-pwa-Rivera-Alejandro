@@ -8,21 +8,47 @@ console.log(urlFinal)
 
 const mostrarDetalle = (nombre, img, pokeId) => {
     const contenedorPokemons = document.getElementById("contenedor-pokemons");
+    //creamos la tarjeta
     const tarjeta = document.createElement('div');
+    tarjeta.classList.add('tarjeta', 'card', 'mb-3');
+
+    contenedorPokemons.appendChild(tarjeta)
+
+    //creamos la fila para las columnas
+    const fila = document.createElement('div')
+    fila.classList.add('row', 'no-gutters');
+
+    //cramos la primera columna
+    const columnaIzquierda = document.createElement('div');
+    columnaIzquierda.classList.add('col-md-6');
+
+    //creamos la segunda columna
+    const columnaDerecha = document.createElement('div');
+    columnaDerecha.classList.add('col-md-6');
+
     const imagen = document.createElement('img');
+    imagen.classList.add('card-img');
+    imagen.src = img;
+
     const titulo = document.createElement('h3');
+    titulo.classList.add('card-title');
+
+
+    
     tarjeta.addEventListener('click', () => { 
         detalleOn(pokeId)
 
     })
 
-    
-    tarjeta.classList.add('tarjeta');
-    contenedorPokemons.appendChild(tarjeta);
-    tarjeta.appendChild(imagen);
-    tarjeta.appendChild(titulo);
-    titulo.innerText = nombre;
-    imagen.src = img; 
+    columnaIzquierda.appendChild(imagen);
+    columnaDerecha.appendChild(titulo);
+
+    fila.appendChild(columnaIzquierda)
+    fila.appendChild(columnaDerecha)
+
+    tarjeta.appendChild(fila);
+   
+ 
 }
 
 
@@ -46,4 +72,6 @@ const goBack = () => {
     window.location.href = destino 
     
 }
+
+console.log(urlFinal)
 
